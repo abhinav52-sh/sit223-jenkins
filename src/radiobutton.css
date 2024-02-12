@@ -1,0 +1,15 @@
+.radio-button {
+    margin: -10px 100px;
+    font-size: 18px;
+}
+
+.radio-button p {
+    display: inline-block;
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 30px;
+}
+
+#Article {
+    margin-left: 60px;
+}

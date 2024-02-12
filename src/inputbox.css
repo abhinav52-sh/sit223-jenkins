@@ -1,0 +1,27 @@
+.input-box {
+    display: flex;
+    color: black;
+}
+
+
+#input-text {
+    font-size: 20px;
+    margin: 10px 20px;
+    margin-left: 100px;
+}
+
+#input-input {
+    margin: 0px 20px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#input-input::placeholder {
+    font-size: 16px;
+}
+
+.input-box input[type="text"] {
+    font-size: 16px;
+    padding-right: 500px;
+}

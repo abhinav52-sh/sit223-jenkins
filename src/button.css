@@ -1,0 +1,17 @@
+.Button {
+    display: inline-block;
+    margin: 20px;
+    margin-left: 1272px;
+}
+
+.Button button{
+    font-size: 18px;
+    padding: 5px 50px;
+    border-style: none;
+    background-color: gray;
+}
+
+.Button button:hover {
+    cursor: pointer;
+    scale: 1.03;
+}

@@ -1,0 +1,12 @@
+.heading {
+    background-color: lightgray;
+    padding-left: 20px;
+    margin: 5px 20px;
+}
+
+.heading p {
+    color: black;
+    font-weight: 500;
+    font-size: 30px;
+}
+
