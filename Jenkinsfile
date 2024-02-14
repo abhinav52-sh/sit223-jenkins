@@ -50,11 +50,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def netlifySiteID = '484aa694-333e-4871-a52f-18cc786eb6a8'
-                    def netlifyAccessToken = 'nfp_qa2QijugbUrQvJyK8PVyv1fzNA4xWuXK59e3'
+                    def netlifySiteID = ''
+                    def netlifyAccessToken = ''
 
                     sh 'npm install netlify-cli --save-dev'
-                    sh 'npx netlify deploy --site ${netlifySiteID} --auth ${netlifyAccessToken} --dir ./build --prod'
+                    sh 'npx netlify deploy --site 484aa694-333e-4871-a52f-18cc786eb6a8 --auth nfp_qa2QijugbUrQvJyK8PVyv1fzNA4xWuXK59e3 --dir ./build --prod'
                 }
             }
         }
