@@ -9,8 +9,8 @@ function TypeSelection(props) {
 
     return (
         <div>
-            <Heading text='New'/>
-            <RadioButton label1='Question' label2='Article' selectedOption={props.selectedOption} onRadioButtonChange={handleRadioButtonChange}/>
+            <Heading text='New Post'/>
+            <RadioButton label1='New Question' label2='Article' selectedOption={props.selectedOption} onRadioButtonChange={handleRadioButtonChange}/>
         </div>
     )
 }
