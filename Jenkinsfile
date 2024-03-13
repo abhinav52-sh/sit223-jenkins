@@ -52,7 +52,7 @@ pipeline {
                 sh 'docker build -t my-react-app .' // Build Docker image
                 sh 'docker stop my-react-container || true' // Stop existing container (if running)
                 sh 'docker rm my-react-container || true' // Remove existing container (if exists)
-                sh 'docker run -d --name my-react-container -p 3000:3000 my-react-app' // Run Docker container
+                sh 'docker run -d --name my-react-container -p 3002:3000 my-react-app' // Run Docker container
             }
         }
         
