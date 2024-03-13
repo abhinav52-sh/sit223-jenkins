@@ -74,13 +74,13 @@ pipeline {
         success {
             emailext subject: "Pipeline '${currentBuild.fullDisplayName}' Successful",
                       body: 'The build was successful. Congratulations!',
-                      to: 'gaganveerbawa@gmail.com',
+                      to: 'sharma.abhinav.new@gmail.com',
                       attachLog: true
         }
         failure {
             emailext subject: "Pipeline '${currentBuild.fullDisplayName}' Failed",
                       body: 'The build has failed. Please investigate.',
-                      to: 'gaganveerbawa@gmail.com',
+                      to: 'sharma.abhinav.new@gmail.com',
                       attachLog: true
         }
     }
