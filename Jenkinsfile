@@ -31,14 +31,6 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                script {
-                    sh "npx start-server-and-test 'start' 3000 'npx cypress run --headless'" 
-                }
-            }
-        }
-        
         stage('Build') {
             steps {
                 script {
@@ -47,7 +39,25 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Test') {
+            steps {
+                script {
+                    sh "npx start-server-and-test 'start' 3000 'npx cypress run --headless'" 
+                }
+            }
+        }
+
+        stage('Test Deploy') {
+            steps {
+                sh 'docker build -t my-react-app .' // Build Docker image
+                sh 'docker stop my-react-container || true' // Stop existing container (if running)
+                sh 'docker rm my-react-container || true' // Remove existing container (if exists)
+                sh 'docker run -d --name my-react-container -p 3000:3000 my-react-app' // Run Docker container
+            }
+        }
+        
+        
+        stage('Production Deploy') {
             steps {
                 script {
                     def netlifySiteID = ''
@@ -62,10 +72,16 @@ pipeline {
     
     post {
         success {
-            echo 'Pipeline Succedded! '
+            emailext subject: "Pipeline '${currentBuild.fullDisplayName}' Successful",
+                      body: 'The build was successful. Congratulations!',
+                      to: 'gaganveerbawa@gmail.com',
+                      attachLog: true
         }
         failure {
-            echo 'Pipeline Failed!'
+            emailext subject: "Pipeline '${currentBuild.fullDisplayName}' Failed",
+                      body: 'The build has failed. Please investigate.',
+                      to: 'gaganveerbawa@gmail.com',
+                      attachLog: true
         }
     }
 }
